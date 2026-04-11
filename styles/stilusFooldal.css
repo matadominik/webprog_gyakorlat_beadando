@@ -1,0 +1,31 @@
+iframe,
+video {
+    transition: 0.3s ease-in-out;
+    margin-top: 40px;
+}
+
+video {
+    margin: 0;
+}
+
+iframe:hover,
+video:hover {
+    transform: scale(1.006);
+}
+
+.megtalalsz {
+    color: rgb(40, 40, 88);
+    font-size: 50px;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.map-wrapper {
+    text-align: center;
+}
+
+.map-wrapper iframe {
+    display: inline-block;
+    max-width: 100%;
+}

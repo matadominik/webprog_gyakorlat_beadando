@@ -10,6 +10,16 @@
 <h3>Honnan szerezhető be?</h3>
 <p>A Lorem Ipsum részleteinek sok változata elérhetõ, de a legtöbbet megváltoztatták egy kis humorral és véletlenszerûen kiválasztott szavakkal, amik kicsit sem teszik értelmessé. Ha használni készülsz a Lorem Ipsumot, biztosnak kell lenned abban, hogy semmi kínos sincs elrejtve a szöveg közepén. Az összes internetes Lorem Ipsum készítõ igyekszik elõre beállított részleteket ismételni a szükséges mennyiségben, ezzel téve az internet egyetlen igazi Lorem Ipsum generátorává ezt az oldalt. Az oldal körülbelül 200 latin szót használ, egy maroknyi modell-mondatszerkezettel így téve a Lorem Ipsumot elfogadhatóvá. Továbbá az elkészült Lorem Ipsum humortól, ismétlõdéstõl vagy értelmetlen szavaktól mentes.</p> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles/stilusFooldal.css" type="text/css">
+</head>
+<body>
+    
+</body>
+</html>
+
 <p>A Balaton Magyarország legnagyobb tava, amely kiemelt szerepet tölt be a turizmusban és a szabadidős kikapcsolódásban. A tó nemcsak a fürdőzés és a strandolás miatt népszerű, hanem a hajózás élménye miatt is.</p>
 <p>A balatoni hajózás hosszú múltra tekint vissza, és napjainkban is fontos része a régió közlekedésének és turisztikai életének. A menetrendi hajók összekötik a tó különböző településeit, míg a sétahajók és kiránduló járatok lehetőséget adnak a Balaton természeti szépségeinek megcsodálására.</p>
 <p>A hajózás során egyedülálló kilátás nyílik a Tihanyi-félszigetre, a part menti városokra és a Balaton változatos vízfelületére, amely minden évszakban más arcát mutatja.</p>
@@ -18,7 +28,29 @@
 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
   <iframe 
     src="https://www.youtube.com/embed/LU7MolVVvIE"
-    style="position: absolute; top: 0; left: 0; width: 45%; height: 45%; border: 0.4vw solid white;"
+    style="position: absolute; top: 0; left: 52%; width: 45%; height: 45%; border: 0.4vw solid rgba(255, 196, 0, 0.4); border-radius: 10px;"
     allowfullscreen>
   </iframe>
+
+  <video 
+    autoplay 
+    muted 
+    loop 
+    controls
+    style="position: absolute; top: 0; left: 2%; width: 45%; height: 45%; border: 0.4vw solid rgb(255, 196, 0, 0.4); border-radius: 10px">
+    
+    <source src="images/hajo-lokal.mp4" type="video/mp4">
+
+    A böngésződ nem támogatja a videó lejátszást.
+  </video>
 </div>
+
+<div class="megtalalsz">
+    <p>Megtalálsz minket itt</p>
+</div>
+
+<div class="map-wrapper">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.104896364676!2d18.040389276025447!3d46.90993427113449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4769bf7d5b62549f%3A0x9a7c64878d3ee3c1!2zU2nDs2ZvayBLaWvDtnTFkQ!5e1!3m2!1shu!2shu!4v1775924516822!5m2!1shu!2shu" 
+        width="90%" height="450px" style="border:0.4vw solid rgba(255, 196, 0, 0.4); border-radius: 10px;;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+

@@ -21,6 +21,7 @@ header {
         url(../images/hatterkep-csoport.avif);
     padding: 10px;
     margin: 10px;
+    color: rgb(40, 40, 88);
 }
 
 header img {
@@ -81,6 +82,7 @@ div#content {
         linear-gradient(rgba(255, 255, 255, 0.9), rgba(255,255,255,0.9)),
         url(../images/hatterkep-csoport.avif);
     padding: 15px;
+    font-size: 1.2em;
 }
 
 div#content img{
