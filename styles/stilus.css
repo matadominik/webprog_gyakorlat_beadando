@@ -1,6 +1,24 @@
+body {
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255,255,255,0.45)),
+        url(../images/hatterkep.jpg);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 header {
     border-radius: 10px;
-    background-color: yellow;
+    border: 0.4vw solid white !important;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.65), rgba(255,255,255,0.65)),
+        url(../images/hatterkep-csoport.avif);
     padding: 10px;
     margin: 10px;
 }
@@ -23,7 +41,10 @@ nav {
     margin: 0px 10px 0px 0px;
     top: 0px;
     border-radius: 10px;
-    background-color: #FF6600;
+    border: 0.4vw solid white !important;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.65), rgba(255,255,255,0.65)),
+        url(../images/hatterkep-csoport.avif);
 }
 
 nav ul {
@@ -37,19 +58,28 @@ nav ul li {
 }
 
 nav ul li.active {
-    border-right: 5px solid blue;
+    border-right: 5px solid rgb(255, 196, 0);
 }
 
 nav ul a {
     text-decoration: none;
-    color: blue;
+    font-weight: bold;
+    color: rgb(71, 71, 71);
+    transition: all 0.25s ease;
+}
+
+nav ul a:hover {
+    color: rgb(255, 196, 0);
 }
 
 div#content {
     display: table-cell;
     width: 100%;
     border-radius: 10px;
-    background-color: #99FFCC;
+    border: 0.2vw solid white !important;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255,255,255,0.9)),
+        url(../images/hatterkep-csoport.avif);
     padding: 15px;
 }
 
@@ -66,5 +96,8 @@ footer {
     border-radius: 10px;
     margin: 10px;
     padding: 5px 20px;
-    background-color: #CC99FF;
+    border: 0.4vw solid white !important;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255,255,255,0.85)),
+        url(../images/hatterkep-csoport.avif);
 }

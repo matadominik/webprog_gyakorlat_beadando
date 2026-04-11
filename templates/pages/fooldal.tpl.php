@@ -1,4 +1,4 @@
-<h2>Köszöntés</h2>
+<!-- <h2>Köszöntés</h2>
 <img src="./images/arc.jpg">
 <h3>Mi a Lorem Ipsum?</h3>
 <p>A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. Az 1960-as években népszerûsítették a Lorem Ipsum részleteket magukbafoglaló Letraset lapokkal, és legutóbb softwarekkel mint például az Aldus Pagemaker.</p>
@@ -8,4 +8,17 @@
 <h3>Miért használjuk?</h3>
 <p>Ez egy régóta elfogadott tény, miszerint egy olvasót zavarja az olvasható szöveg miközben a szöveg elrendezését nézi. A Lorem Ipsum használatának lényege, hogy többé-kevésbé rendezettebb betûket tartalmaz, ellentétben a Tartalom helye, Tartalom helye-féle megoldással. Sok desktop szerkesztõ és weboldal szerkesztõ használja a Lorem Ipsum-ot mint alapbeállítású szövegmodellt, és egy keresés a lorem ipsum-ra sok félkész weboldalt fog eredményezni.</p>
 <h3>Honnan szerezhető be?</h3>
-<p>A Lorem Ipsum részleteinek sok változata elérhetõ, de a legtöbbet megváltoztatták egy kis humorral és véletlenszerûen kiválasztott szavakkal, amik kicsit sem teszik értelmessé. Ha használni készülsz a Lorem Ipsumot, biztosnak kell lenned abban, hogy semmi kínos sincs elrejtve a szöveg közepén. Az összes internetes Lorem Ipsum készítõ igyekszik elõre beállított részleteket ismételni a szükséges mennyiségben, ezzel téve az internet egyetlen igazi Lorem Ipsum generátorává ezt az oldalt. Az oldal körülbelül 200 latin szót használ, egy maroknyi modell-mondatszerkezettel így téve a Lorem Ipsumot elfogadhatóvá. Továbbá az elkészült Lorem Ipsum humortól, ismétlõdéstõl vagy értelmetlen szavaktól mentes.</p>
+<p>A Lorem Ipsum részleteinek sok változata elérhetõ, de a legtöbbet megváltoztatták egy kis humorral és véletlenszerûen kiválasztott szavakkal, amik kicsit sem teszik értelmessé. Ha használni készülsz a Lorem Ipsumot, biztosnak kell lenned abban, hogy semmi kínos sincs elrejtve a szöveg közepén. Az összes internetes Lorem Ipsum készítõ igyekszik elõre beállított részleteket ismételni a szükséges mennyiségben, ezzel téve az internet egyetlen igazi Lorem Ipsum generátorává ezt az oldalt. Az oldal körülbelül 200 latin szót használ, egy maroknyi modell-mondatszerkezettel így téve a Lorem Ipsumot elfogadhatóvá. Továbbá az elkészült Lorem Ipsum humortól, ismétlõdéstõl vagy értelmetlen szavaktól mentes.</p> -->
+
+<p>A Balaton Magyarország legnagyobb tava, amely kiemelt szerepet tölt be a turizmusban és a szabadidős kikapcsolódásban. A tó nemcsak a fürdőzés és a strandolás miatt népszerű, hanem a hajózás élménye miatt is.</p>
+<p>A balatoni hajózás hosszú múltra tekint vissza, és napjainkban is fontos része a régió közlekedésének és turisztikai életének. A menetrendi hajók összekötik a tó különböző településeit, míg a sétahajók és kiránduló járatok lehetőséget adnak a Balaton természeti szépségeinek megcsodálására.</p>
+<p>A hajózás során egyedülálló kilátás nyílik a Tihanyi-félszigetre, a part menti városokra és a Balaton változatos vízfelületére, amely minden évszakban más arcát mutatja.</p>
+
+
+<div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+  <iframe 
+    src="https://www.youtube.com/embed/LU7MolVVvIE"
+    style="position: absolute; top: 0; left: 0; width: 45%; height: 45%; border: 0.4vw solid white;"
+    allowfullscreen>
+  </iframe>
+</div>
