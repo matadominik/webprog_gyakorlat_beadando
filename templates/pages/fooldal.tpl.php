@@ -25,24 +25,26 @@
 <p>A hajózás során egyedülálló kilátás nyílik a Tihanyi-félszigetre, a part menti városokra és a Balaton változatos vízfelületére, amely minden évszakban más arcát mutatja.</p>
 
 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-  <iframe 
-    src="https://www.youtube.com/embed/LU7MolVVvIE"
-    style="position: absolute; top: 0; left: 52%; width: 45%; height: 45%; border: 0.4vw solid rgba(255, 196, 0, 0.4); border-radius: 10px;"
-    allowfullscreen>
-  </iframe>
+<div class="video-wrapper">
+  <div class="video-box">
+    <iframe 
+      src="https://www.youtube.com/embed/LU7MolVVvIE"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-  <video 
-    autoplay 
-    muted 
-    loop 
-    controls
-    style="position: absolute; top: 0; left: 2%; width: 45%; height: 45%; border: 0.4vw solid rgb(255, 196, 0, 0.4); border-radius: 10px">
+  <div class ="video-box">
+    <video 
+      autoplay 
+      muted 
+      loop 
+      controls>
     
-    <source src="images/hajo-lokal.mp4" type="video/mp4">
+      <source src="images/hajo-lokal.mp4" type="video/mp4">
 
-    A böngésződ nem támogatja a videó lejátszást.
-  </video>
+      A böngésződ nem támogatja a videó lejátszást.
+    </video>
+  </div>
 </div>
 
 <div class="megtalalsz">
