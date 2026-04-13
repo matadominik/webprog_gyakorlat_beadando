@@ -12,7 +12,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-/* teszt */
 
 header {
     border-radius: 10px;
@@ -103,4 +102,5 @@ footer {
     background:
         linear-gradient(rgba(255, 255, 255, 0.85), rgba(255,255,255,0.85)),
         url(../images/hatterkep-csoport.avif);
+    text-align: center;
 }
