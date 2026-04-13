@@ -19,14 +19,14 @@
             );
     
             // képek megjelenítése
-            foreach ($kepek as $k) {
-                printf("
-                <div class='kep'>
-                <img src='images/feltoltott/%s'>
-                </div>",
-                    rawurldecode(basename($k))
-                );
-            }
+            // foreach ($kepek as $k) {
+            //     printf("
+            //     <div class='kep'>
+            //     <img src='images/feltoltott/%s'>
+            //     </div>",
+            //         rawurldecode(basename($k))
+            //     );
+            // }
         ?>
     </div>
 
@@ -34,10 +34,35 @@
         <p>Tölts fel képet te is</p>
     </div>
 
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image" />
-        <button type="submit" name="submit">Feltöltés</button>
-    </form>
+    <div class="gombCsoport">
+        <form method="POST" enctype="multipart/form-data">
+            <label class="custom-file-upload" for="imageInput">
+                <input id="imageInput" type="file" name="image">
+                Kép kiválasztása
+            </label>
+
+            <button type="submit" name="submit">Feltöltés</button>
+        </form>
+        
+        <br><label id="selectedFiles">Nincs kiválasztott fájl</label>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('imageInput');
+        const selectedFilesLabel = document.getElementById('selectedFiles');
+
+        fileInput.addEventListener('change', () => {
+            const files = Array.from(fileInput.files);
+            if (files.length === 0) {
+                selectedFilesLabel.textContent = 'Nincs kiválasztott fájl';
+                return;
+            }
+
+            selectedFilesLabel.textContent = files
+                .map(file => file.name)
+                .join(', ');
+        });
+    </script>
 </body>
 </html>
 
