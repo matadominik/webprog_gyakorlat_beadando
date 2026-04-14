@@ -10,24 +10,33 @@
 
     <div class="galeria">
         <?php
-    
             // képek a galériából
             $mappa = __DIR__ . '/../../images/feltoltott/';
             $kepek = glob(
                 "$mappa*.{jpg,jpeg,gif,png,bmp,webp,avif}",
                 GLOB_BRACE
             );
-    
+
             // képek megjelenítése
-            // foreach ($kepek as $k) {
-            //     printf("
-            //     <div class='kep'>
-            //     <img src='images/feltoltott/%s'>
-            //     </div>",
-            //         rawurldecode(basename($k))
-            //     );
-            // }
+            foreach ($kepek as $k) {
+                $filename = rawurldecode(basename($k));
+                printf(
+                    "<a class='kep' href='images/feltoltott/%s' data-full='images/feltoltott/%s' target='_blank' rel='noreferrer'>\n" .
+                    "    <img src='images/feltoltott/%s' alt='Galéria kép'>\n" .
+                    "</a>",
+                    $filename,
+                    $filename,
+                    $filename
+                );
+            }
         ?>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Bezárás">×</button>
+            <img id="lightboxImage" src="" alt="Nagyított kép">
+        </div>
     </div>
 
     <div class="focimek">
@@ -50,6 +59,9 @@
     <script>
         const fileInput = document.getElementById('imageInput');
         const selectedFilesLabel = document.getElementById('selectedFiles');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
 
         fileInput.addEventListener('change', () => {
             const files = Array.from(fileInput.files);
@@ -61,6 +73,25 @@
             selectedFilesLabel.textContent = files
                 .map(file => file.name)
                 .join(', ');
+        });
+
+        document.querySelectorAll('.kep').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const fullSrc = item.getAttribute('data-full');
+                lightboxImage.src = fullSrc;
+                lightbox.classList.add('open');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('open');
+        });
+
+        lightbox.addEventListener('click', event => {
+            if (event.target === lightbox) {
+                lightbox.classList.remove('open');
+            }
         });
     </script>
 </body>
