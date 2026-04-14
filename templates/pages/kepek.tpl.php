@@ -39,22 +39,24 @@
         </div>
     </div>
 
-    <div class="focimek">
-        <p>Tölts fel képet te is</p>
-    </div>
+    <?php if (isset($_SESSION['login'])) : ?>
+        <div class="focimek">
+            <p>Tölts fel képet te is</p>
+        </div>
 
-    <div class="gombCsoport">
-        <form method="POST" enctype="multipart/form-data">
-            <label class="custom-file-upload" for="imageInput">
-                <input id="imageInput" type="file" name="image">
-                Kép kiválasztása
-            </label>
+        <div class="gombCsoport">
+            <form method="POST" enctype="multipart/form-data">
+                <label class="custom-file-upload" for="imageInput">
+                    <input id="imageInput" type="file" name="image">
+                    Kép kiválasztása
+                </label>
 
-            <button type="submit" name="submit">Feltöltés</button>
-        </form>
-        
-        <br><label id="selectedFiles">Nincs kiválasztott fájl</label>
-    </div>
+                <button type="submit" name="submit">Feltöltés</button>
+            </form>
+            
+            <br><label id="selectedFiles">Nincs kiválasztott fájl</label>
+        </div>
+    <?php endif; ?>
 
     <script>
         const fileInput = document.getElementById('imageInput');
