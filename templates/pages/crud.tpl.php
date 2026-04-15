@@ -1,33 +1,39 @@
-<table>
-    <caption>5. gyakorlat 1. feladat:<br>TÁBLÁZAT</caption>
-    <tr>
-        <th>Employee</th>
-        <th>Salary</th>
-        <th>Bonus</th>
-        <th>Supervisor</th>
-    </tr>
-    <tr>
-        <td>Stephen C. Cox</td>
-        <td>$300</td>
-        <td>$50</td>
-        <td>Bob</td>
-    </tr>
-    <tr>
-        <td>Josephin Tan</td>
-        <td>$150</td>
-        <td>-</td>
-        <td>Annie</td>
-    </tr>
-    <tr>
-        <td>Joyce Ming</td>
-        <td>$200</td>
-        <td>$35</td>
-        <td>Andy</td>
-    </tr>
-    <tr>
-        <td>James A. Pentel</td>
-        <td>$175</td>
-        <td>$25</td>
-        <td>Annie</td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="stylesheet" href="./styles/stilusCRUD.css" type="text/css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tulajdonos adatok</h1>
+        <?php if (isset($_SESSION['login'])) : ?>            
+            <a href="hozzaadas">Hozzáadás</a>
+        <?php endif; ?>
+
+        <table>
+            <tr>
+                <th>Az.</th>
+                <th>Név</th>
+                <th>Város</th>
+                <?php if (isset($_SESSION['login'])) : ?>                    
+                    <th>Műveletek</th>
+                <?php endif; ?>
+            </tr>
+
+            <tr>
+                <th>1</th>
+                <th>Balatonjárók Zrt.</th>
+                <th>Siófok</th>
+                <?php if (isset($_SESSION['login'])) : ?>                    
+                    <td>
+                        <a href="modositas">Módosítás</a>
+                        <a href="" class="gomb-eltavolitas">Eltávolítás</a>
+                    </td>
+                <?php endif; ?>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

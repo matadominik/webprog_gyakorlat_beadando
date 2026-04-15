@@ -1,0 +1,92 @@
+.container {
+    width: 100%;
+    max-width: 1400px;
+    /* margin: 100px auto; */
+}
+
+.container h1 {
+    color: #222945;
+    text-align: center;
+}
+
+.container a {
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background: #7494ec;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+th {
+    text-align: left;
+}
+
+.gomb-eltavolitas {
+    background: #e03131 !important;
+    margin-left: 5px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+    background: #f2f2f2;
+}
+
+.form-wrapper {
+    background: #fff;
+    width: 700px;
+    padding: 40px 40px 50px;
+    border-radius: 10px;
+}
+
+.form-wrapper h1 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    border: 2px solid #ddd;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.gomb-doboz {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.gomb-doboz button {
+    padding: 8px 50px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 4xp;
+    cursor: pointer;
+    background: #7494ec;
+}
+
+.gomb-doboz a {
+    background: transparent;
+    color: #7494ec;
+    border: 2px solid #7494ec;
+    padding: 6px 50px;
+    text-decoration: none;
+}
