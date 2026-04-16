@@ -32,8 +32,13 @@
                         <td><?= htmlspecialchars($tulajdonos['varos']) ?></td>
                         <?php if (isset($_SESSION['login'])) : ?>
                             <td>
-                                <a href="modositas">Módosítás</a>
-                                <a href="" class="gomb-eltavolitas">Eltávolítás</a>
+                                <a href="modositas?az=<?= urlencode($tulajdonos['az']) ?>">Módosítás</a>
+                                <!-- <a href="" class="gomb-eltavolitas">Eltávolítás</a> -->
+                                <form method="POST" action="muvelet" class="inline-form">
+                                    <input type="hidden" name="action" value="torles">
+                                    <input type="hidden" name="az" value="<?= htmlspecialchars($tulajdonos['az']) ?>">
+                                    <button type="submit" class="gomb-eltavolitas">Eltávolítás</button>
+                                </form>
                             </td>
                         <?php endif; ?>
                     </tr>

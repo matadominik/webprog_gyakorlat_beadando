@@ -34,8 +34,24 @@ th {
 }
 
 .gomb-eltavolitas {
-    background: #e03131 !important;
+    display: inline-block;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background: #e03131;
+    text-decoration: none;
+    cursor: pointer;
     margin-left: 5px;
+}
+
+.inline-form {
+    display: inline;
+    margin: 0;
+}
+
+.inline-form button {
+    font: inherit;
 }
 
 .wrapper {

@@ -1,10 +1,9 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || ($_POST['action'] ?? '') !== 'hozzaadas') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     return;
 }
 
-$nev = trim($_POST['nev'] ?? '');
-$varos = trim($_POST['varos'] ?? '');
+$action = $_POST['action'] ?? '';
 
 try {
     if($_SERVER['HTTP_HOST'] === 'localhost') {
@@ -16,12 +15,42 @@ try {
     }
     $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 
-    $sqlInsert = "INSERT INTO tulajdonos (nev, varos) VALUES (:nev, :varos)";
-    $stmt = $dbh->prepare($sqlInsert);
-    $stmt->execute(array(
-        ':nev' => $nev,
-        ':varos' => $varos
-    ));
+    if ($action === 'hozzaadas') {
+        $nev = trim($_POST['nev'] ?? '');
+        $varos = trim($_POST['varos'] ?? '');
+
+        $sqlInsert = "INSERT INTO tulajdonos (nev, varos) VALUES (:nev, :varos)";
+        $stmt = $dbh->prepare($sqlInsert);
+        $stmt->execute(array(
+            ':nev' => $nev,
+            ':varos' => $varos
+        ));
+    }
+    elseif ($action === 'modositas') {
+        $az = trim($_POST['az'] ?? '');
+        $nev = trim($_POST['nev'] ?? '');
+        $varos = trim($_POST['varos'] ?? '');
+
+        $sqlUpdate = "UPDATE tulajdonos SET nev = :nev, varos = :varos WHERE az = :az";
+        $stmt = $dbh->prepare($sqlUpdate);
+        $stmt->execute(array(
+            ':nev' => $nev,
+            ':varos' => $varos,
+            ':az' => $az
+        ));
+    }
+    elseif ($action === 'torles') {
+        $az = trim($_POST['az'] ?? '');
+
+        $sqlDelete = "DELETE FROM tulajdonos WHERE az = :az";
+        $stmt = $dbh->prepare($sqlDelete);
+        $stmt->execute(array(
+            ':az' => $az
+        ));
+    }
+    else {
+        return;
+    }
 
     header('Location: crud');
     exit;
