@@ -1,4 +1,12 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
+    margin: 0;
     min-height: 100vh;
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     line-height: 1.4;
@@ -31,51 +39,66 @@ header img {
 
 div#wrapper {
     margin: 10px;
+    max-width: calc(100% - 20px);
 }
 
-aside {
-    display: table-cell;
-    vertical-align: top;
-}
-
-nav {
-    margin: 0px 10px 0px 0px;
-    top: 0px;
+#nav {
+    margin: 10px;
     border-radius: 10px;
     border: 0.4vw solid white !important;
     background:
-        linear-gradient(rgba(255, 255, 255, 0.65), rgba(255,255,255,0.65)),
-        url(../images/hatterkep-csoport.avif);
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255,255,255,0.8));
+    padding: 5px 10px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 15px 0px;
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-nav ul li {
-    padding: 0px 15px;;
+#nav li {
+    margin: 0;
 }
 
-nav ul li.active {
-    border-right: 5px solid rgb(255, 196, 0);
+#nav li.active a {
+    border-bottom: 4px solid rgb(255, 196, 0);
 }
 
-nav ul a {
+#nav a {
+    display: inline-block;
+    padding: 0.8rem 1rem;
     text-decoration: none;
     font-weight: bold;
     color: rgb(71, 71, 71);
-    transition: all 0.25s ease;
+    transition: color 0.25s ease, transform 0.2s ease;
 }
 
-nav ul a:hover {
+#nav a:hover {
     color: rgb(255, 196, 0);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+    #nav ul {
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    #nav a {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.95rem;
+    }
 }
 
 div#content {
-    display: table-cell;
-    width: 100%;
+    display: block;
+    width: auto;
+    max-width: 100%;
     border-radius: 10px;
     border: 0.2vw solid white !important;
     background:
