@@ -1,0 +1,131 @@
+.kapcsolat-wrapper {
+  max-width: 640px;
+  width: 100%;
+  margin: 1.5rem auto 2.5rem;
+  padding: 1.75rem 1.5rem 2rem;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,246,255,0.95));
+  box-shadow: 0 18px 50px rgba(40, 48, 88, 0.18);
+  border: 1px solid rgba(13, 110, 253, 0.12);
+}
+
+/* Űrlap elrendezés */
+#kapcsolatForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-sor label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: rgb(40, 40, 88);
+}
+
+.form-sor input,
+.form-sor textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: rgba(255,255,255,0.9);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-sor input:focus,
+.form-sor textarea:focus {
+  outline: none;
+  border-color: rgba(13, 110, 253, 0.8);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+  background: #fff;
+}
+
+/* Hibaszövegek */
+.hiba-uzenet {
+  display: block;
+  min-height: 1.1rem;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: #e03131;
+}
+
+/* Küldés gomb – kártyagomb stílus */
+#kuldesGomb {
+  margin-top: 0.5rem;
+  align-self: center;
+  padding: 0.8rem 1.9rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ffffff, #ffd964);
+  box-shadow: 0 15px 40px rgba(255, 196, 0, 0.4);
+  color: rgb(40, 40, 88);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+#kuldesGomb:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(40, 48, 88, 0.35);
+  background: linear-gradient(135deg, #fff7d0, #ffd33d);
+}
+
+/* Térkép kártyában, reszponzívan */
+.kapcs-terkep-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(40, 48, 88, 0.26);
+  border: 0.35vw solid rgba(255, 196, 0, 0.4);
+}
+
+.kapcs-terkep-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Mobil finomhangolás */
+@media (max-width: 600px) {
+  .kapcsolat-wrapper {
+    margin-inline: 0.5rem;
+    padding: 1.2rem 1rem 1.6rem;
+  }
+  #kuldesGomb {
+    width: 100%;
+  }
+}
+/* Elküldött adatok blokk */
+.kapcsolat-eredmeny {
+  max-width: 640px;
+  margin: 1.5rem auto 2rem;
+  padding: 1.4rem 1.3rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 12px 38px rgba(40, 48, 88, 0.18);
+}
+
+.kapcsolat-eredmeny ul {
+  list-style: none;
+  padding: 0;
+}
+
+.kapcsolat-eredmeny li + li {
+  margin-top: 0.4rem;
+}
+
+
+
+
+

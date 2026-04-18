@@ -1,0 +1,71 @@
+/* Üzenetek táblázat konténer */
+.uzenetek-tabla {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1.5rem auto 2rem;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.96);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(40, 48, 88, 0.18);
+}
+
+/* Fejlécsor */
+.uzenetek-tabla thead {
+  background: linear-gradient(135deg, #283058, #3b4470);
+  color: #fff;
+}
+
+.uzenetek-tabla th,
+.uzenetek-tabla td {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.uzenetek-tabla th {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Csíkozás + hover */
+.uzenetek-tabla tbody tr:nth-child(even) {
+  background: rgba(248, 249, 252, 0.95);
+}
+
+.uzenetek-tabla tbody tr:hover {
+  background: rgba(255, 248, 205, 0.6);
+}
+
+/* Üzenet szöveg cella */
+.uzenetek-tabla td:last-child {
+  max-width: 320px;
+  white-space: pre-wrap;
+}
+
+/* Név oszlop kiemelése */
+.uzenetek-tabla td:nth-child(2) {
+  font-weight: 600;
+  color: rgb(40, 40, 88);
+}
+
+/* Hibaüzenet */
+p.hiba {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: #ffe3e3;
+  color: #c92a2a;
+  font-weight: 600;
+}
+
+/* Mobilra: a táblázat vízszintesen görgethető legyen, ne törjön szét */
+@media (max-width: 720px) {
+  .uzenetek-tabla {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
