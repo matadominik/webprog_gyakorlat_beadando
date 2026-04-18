@@ -27,3 +27,13 @@ INSERT INTO `felhasznalok` (`id`,`csaladi_nev`,`uto_nev`,`bejelentkezes`,`jelszo
  (10,'Családi_10','Utónév_10','Login10',sha1('login10')),
  (11,'Családi_11','Utónév_11','Login11',sha1('login11')),
  (12,'Családi_12','Utónév_12','Login12',sha1('login12'));
+
+CREATE TABLE kapcsolat_uzenetek (
+  id             INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  felhasznalo_id INT UNSIGNED NULL,
+  nev            VARCHAR(100) NOT NULL,
+  email          VARCHAR(100) NOT NULL,
+  targy          VARCHAR(150) NOT NULL,
+  uzenet         TEXT NOT NULL,
+  kuldes_ideje   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
