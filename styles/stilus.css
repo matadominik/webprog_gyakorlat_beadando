@@ -127,3 +127,26 @@ footer {
         url(../images/hatterkep-csoport.avif);
     text-align: center;
 }
+/* Tartalom konténer, hogy mobilon is legyen kis belső margó */
+div#wrapper {
+  padding: 0 0.75rem 1.5rem;
+}
+
+/* Kisebb kijelzőknél még szellősebb header és content */
+@media (max-width: 720px) {
+  header img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  div#content {
+    padding: 0.75rem;
+  }
+}
+
+

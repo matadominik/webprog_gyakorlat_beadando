@@ -54,3 +54,18 @@
     transform: scale(1.006);
     opacity: 1;
 }
+
+@media (max-width: 720px) {
+  .video-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .video-box {
+    width: 100%;
+  }
+  .megtalalsz {
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+  }
+}
+
+

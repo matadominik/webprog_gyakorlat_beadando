@@ -1,0 +1,41 @@
+.belepes-wrapper {
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto 40px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.belepes-wrapper fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.belepes-wrapper input[type="text"],
+.belepes-wrapper input[type="password"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.belepes-wrapper input[type="submit"] {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: #283058;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.belepes-wrapper input[type="submit"]:hover {
+  background: #3b4470;
+}
+
+
