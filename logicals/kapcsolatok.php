@@ -3,11 +3,13 @@
 
 <div class="kapcsolat-wrapper">
   <form id="kapcsolatForm" method="post" action="kapcsolatkuldes">
-    <div class="form-sor">
-      <label for="nev">Név</label>
-      <input id="nev" name="nev" type="text">
+    <<div class="form-sor">
+  <label for="nev">Név</label>
+      <input id="nev" name="nev" type="text"
+       value="<?= isset($_SESSION['login']) ? htmlspecialchars($_SESSION['csn'].' '.$_SESSION['un']) : 'Vendég' ?>">
       <small class="hiba-uzenet" id="nevHiba"></small>
-    </div>
+</div>
+
 
     <div class="form-sor">
       <label for="email">E-mail cím</label>

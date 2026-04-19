@@ -22,15 +22,16 @@
                 <tr>
                     <td><?= htmlspecialchars($u['kuldes_ideje']) ?></td>
                     <td>
-                        <?php
-                        // ha volt felhasznalo_id és van hozzá név a felhasznalok táblában
-                        if (!empty($u['felhasznalo_id']) && (!empty($u['csaladi_nev']) || !empty($u['uto_nev']))) {
-                            echo htmlspecialchars(trim($u['csaladi_nev'] . ' ' . $u['uto_nev']));
+                    <?php
+                        if (!empty($u['csaladi_nev']) || !empty($u['uto_nev'])) {
+                        echo htmlspecialchars(trim($u['csaladi_nev'] . ' ' . $u['uto_nev']));
+                        } elseif (!empty($u['nev'])) {
+                        echo htmlspecialchars($u['nev']);
                         } else {
-                            echo 'Vendég';
-                        }
-                        ?>
-                    </td>
+                        echo 'Vendég';
+            }
+                    ?>
+</td>
                     <td><?= htmlspecialchars($u['email']) ?></td>
                     <td><?= htmlspecialchars($u['targy']) ?></td>
                     <td><?= nl2br(htmlspecialchars($u['uzenet'])) ?></td>

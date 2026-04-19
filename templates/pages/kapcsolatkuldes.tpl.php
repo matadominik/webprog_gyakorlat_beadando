@@ -25,6 +25,9 @@
 <?php else : ?>
     <p>Nem érkeztek adatok.</p>
     <p><a href="kapcsolat">Vissza a kapcsolat űrlaphoz</a></p>
+
 <?php endif; ?>
+
+
 
 

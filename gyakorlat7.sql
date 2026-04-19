@@ -29,11 +29,12 @@ INSERT INTO `felhasznalok` (`id`,`csaladi_nev`,`uto_nev`,`bejelentkezes`,`jelszo
  (12,'Családi_12','Utónév_12','Login12',sha1('login12'));
 
 CREATE TABLE kapcsolat_uzenetek (
-  id             INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  felhasznalo_id INT UNSIGNED NULL,
-  nev            VARCHAR(100) NOT NULL,
-  email          VARCHAR(100) NOT NULL,
-  targy          VARCHAR(150) NOT NULL,
-  uzenet         TEXT NOT NULL,
-  kuldes_ideje   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+felhasznalo_id INT UNSIGNED NULL,
+nev VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+targy VARCHAR(150) NOT NULL,
+uzenet TEXT NOT NULL,
+kuldes_ideje TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+

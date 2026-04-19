@@ -1,33 +1,33 @@
 <?php
-$kapcs_hibak  = [];
+$kapcs_hibak = [];
 $kapcs_adatok = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nev    = trim($_POST['nev']    ?? '');
-    $email  = trim($_POST['email']  ?? '');
-    $targy  = trim($_POST['targy']  ?? '');
+    $nev    = trim($_POST['nev'] ?? '');
+    $email  = trim($_POST['email'] ?? '');
+    $targy  = trim($_POST['targy'] ?? '');
     $uzenet = trim($_POST['uzenet'] ?? '');
 
-    // Szerveroldali ellenőrzés [32]
+    // Szerveroldali ellenőrzés
     if (strlen($nev) < 3) {
-        $kapcs_hibak[] = 'A név legalább 3 karakter hosszú legyen.';
+        $kapcs_hibak[] = 'A név legyen legalább 3 karakter.';
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $kapcs_hibak[] = 'Érvényes e-mail címet adj meg.';
+        $kapcs_hibak[] = 'Adj meg érvényes e-mail címet.';
     }
 
     if (strlen($targy) < 3) {
-        $kapcs_hibak[] = 'A tárgy legalább 3 karakter hosszú legyen.';
+        $kapcs_hibak[] = 'A tárgy legyen legalább 3 karakter.';
     }
 
     if (strlen($uzenet) < 10) {
-        $kapcs_hibak[] = 'Az üzenet legalább 10 karakter hosszú legyen.';
+        $kapcs_hibak[] = 'Az üzenet legyen legalább 10 karakter.';
     }
 
     if (empty($kapcs_hibak)) {
         try {
-            // Adatbázis-kapcsolat – ugyanaz, mint a login/CRUD részekben [3][25][26]
+            // Kapcsolódás
             if ($_SERVER['HTTP_HOST'] === 'localhost') {
                 $dbh = new PDO(
                     'mysql:host=localhost;dbname=gyakorlat7',
@@ -46,14 +46,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 
-            // ha bejelentkezett, elmentjük a felhasználó id-ját (Üzenetek menü miatt) [3][25][32]
+            // Ha be van jelentkezve, akkor eltároljuk az user ID-ját
             $felhasznaloId = isset($_SESSION['login_id']) ? (int)$_SESSION['login_id'] : null;
 
-            $sqlInsert = "INSERT INTO kapcsolat_uzenetek (felhasznalo_id, nev, email, targy, uzenet)
-                          VALUES (:felhasznalo_id, :nev, :email, :targy, :uzenet)";
+            // Mentés az adatbázisba
+            $sqlInsert = "INSERT INTO kapcsolat_uzenetek
+                          (felhasznalo_id, nev, email, targy, uzenet)
+                          VALUES
+                          (:felhasznalo_id, :nev, :email, :targy, :uzenet)";
+
             $stmt = $dbh->prepare($sqlInsert);
             $stmt->execute(array(
-                ':felhasznalo_id' => $felhasznaloId ?: null,
+                ':felhasznalo_id' => $felhasznaloId,
                 ':nev'            => $nev,
                 ':email'          => $email,
                 ':targy'          => $targy,
@@ -74,5 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: kapcsolat');
     exit;
 }
+?>
 
 
