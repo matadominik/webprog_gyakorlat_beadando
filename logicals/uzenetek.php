@@ -1,8 +1,8 @@
 <?php
-$uzenetek      = [];
+$uzenetek = [];
 $uzenetek_hiba = null;
 
-// csak bejelentkezve látható (menüszabály + itt is ellenőrizzük) [7][32]
+// csak bejelentkezve látható
 if (!isset($_SESSION['login'])) {
     $uzenetek_hiba = 'Az üzenetek megtekintéséhez be kell jelentkezni.';
     return;
@@ -26,8 +26,7 @@ try {
     }
 
     $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-
-    // Üzenetek lekérése fordított időrendben, felhasználó nevével [3][25][32]
+// Üzenetek lekérése fordított időrendben, felhasználó nevével [3][25][32]
     $sql = "SELECT k.id,
                    k.nev,
                    k.email,
@@ -40,6 +39,7 @@ try {
             FROM kapcsolat_uzenetek k
             LEFT JOIN felhasznalok f ON k.felhasznalo_id = f.id
             ORDER BY k.kuldes_ideje DESC";
+
     $sth = $dbh->prepare($sql);
     $sth->execute();
     $uzenetek = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -47,5 +47,3 @@ try {
 } catch (PDOException $e) {
     $uzenetek_hiba = 'Hiba az üzenetek lekérdezésekor: ' . $e->getMessage();
 }
-
-
