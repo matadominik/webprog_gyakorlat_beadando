@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h2>Kapcsolat</h2>
 <p>Írj üzenetet az oldal készítőinek az alábbi űrlapon keresztül!</p>
 
@@ -90,5 +91,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
-

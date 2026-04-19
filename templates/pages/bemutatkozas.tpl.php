@@ -1,301 +1,311 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="container my-4">
+  <!-- Fejléc: címsor és menü kártyákban, középre igazítva -->
+  <header class="text-center mb-4">
+    <h1 class="display-4 mb-4 text-center">Balatoni Hajók - Vízi Világ</h1>
 
-            <!-- Fő cím: miről szól az oldal -->
-            <h1>Bemutatkozás</h1>
-
-            <!-- Általános bevezető szöveg a Balatonról -->
-            <p>
-                A Balaton Magyarország legnagyobb tava, amely nemcsak a pihenés és a turizmus egyik
-                központja, hanem a hajózás szempontjából is kiemelkedő jelentőségű. Több kikötő,
-                menetrendi járat és sétahajó indul a tó körül, így a látogatók a vízről is
-                felfedezhetik a környék látnivalóit.
-            </p>
-
-            <!-- A weboldal célját ismertető blokk -->
-            <h2>A weboldal célja</h2>
-            <p>
-                A „Balatoni hajók” weboldal egyrészt bemutató oldal: célunk, hogy áttekintést adjunk
-                a Balaton hajózási világáról, a legfontosabb járatokról és hajótípusokról, illetve
-                érdekességeket és hasznos információkat gyűjtsünk össze a látogatók számára.
-                Másrészt ez az oldal szolgál a <strong>Web‑programozás 1</strong> tárgy házi feladatának
-                demonstrációjaként is.
-            </p>
-
-            <!-- Rövid áttekintés arról, mit talál a látogató a menükben -->
-            <h2>Mit lehet az oldalon találni?</h2>
-            <ul>
-                <li>
-                    <strong>Cikkek</strong> menüpont alatt rövid ismertetőket adunk a balatoni
-                    hajózás történetéről, a kompjáratokról és a sétahajózásról.
-                </li>
-                <li>
-                    <strong>Táblázat</strong> menüpontban mintamenetrendet és hajóadatokat
-                    jelenítünk meg.
-                </li>
-                <li>
-                    A későbbi menüpontokban különböző <strong>webes technológiákat</strong>
-                    mutatunk be (JavaScript, Fetch API, Axios, React, SPA), ahol egy kiválasztott
-                    adatbázis‑fájl adatait kezeljük CRUD (Create, Read, Update, Delete) műveletekkel.
-                </li>
-                <li>
-                    A <strong>Belépés</strong> funkció segítségével a felhasználók regisztrálhatnak
-                    és bejelentkezhetnek, így a házi feladathoz szükséges felhasználókezelés
-                    (session, adatbázis) is megvalósul.
-                </li>
-            </ul>
-
-            <!-- Felsorolás arról, milyen technológiák szerepelnek a beadandóban -->
-            <h2>Felhasznált technológiák a beadandóban</h2>
-            <p>
-                A beadandó elkészítése során a következő technológiákat és módszereket használjuk:
-            </p>
-            <ul>
-                <li><strong>HTML5, CSS3, Bootstrap</strong> – a weboldal felépítése, elrendezése és stílusozása.</li>
-                <li><strong>PHP + MySQL</strong> – front‑controller minta, felhasználókezelés
-                    (regisztráció, belépés, kilépés), adatbázis‑kapcsolat.</li>
-                <li><strong>JavaScript CRUD</strong> – kliens oldali adatműveletek egy választott adatfájllal.</li>
-                <li><strong>Fetch API</strong> – JavaScriptből PHP szerver felé történő kommunikáció, 
-                    az adatok tényleges tárolása adatbázisban.</li>
-                <li><strong>React</strong> – komponens alapú felület, ahol szintén CRUD funkciókat valósítunk meg.</li>
-                <li><strong>Axios + React</strong> – szerverrel történő kommunikáció React komponensekből.</li>
-                <li><strong>SPA (Single Page Application)</strong> – egyoldalas React alkalmazás több aloldallal,
-                    useState állapotkezeléssel.</li>
-                <li><strong>Git + GitHub</strong> – verziókezelés, csapatmunka, publikálás.</li>
-                <li><strong>Internetes tárhely</strong> – az alkalmazás elérhetővé tétele külső webszerveren.</li>
-            </ul>
-
-            <!-- Csapattagok bemutatása – ide írjátok be a saját neveket/Neptun kódokat -->
-            <h2>A projekt készítői</h2>
-            <p>
-                Az oldalt a Web‑programozás 1 tantárgy házi feladataként készítettük, páros projektmunka keretében.
-            </p>
-            <ul>
-                <li><strong>Név 1</strong> – Neptun: <em>ABC123</em></li>
-                <li><strong>Név 2</strong> – Neptun: <em>DEF456</em></li>
-            </ul>
-            <p>
-                A fenti adatok a dokumentációban is szerepelnek, illetve a láblécben külön is
-                feltüntetjük a készítők nevét és Neptun‑kódját a beadandó követelményeinek megfelelően.
-            </p>
-
-            <hr>
-
-            <!--
-                EXTRA JAVASCRIPTES MODUL
-                Érdekesség-kártyák a balatoni hajózásról.
-                A gomb megnyomására 3 véletlenszerű kártya jelenik meg animációval.
-            -->
-            <h2 class="mt-4">Érdekességek a balatoni hajózásról</h2>
-
-            <p>
-                Kattints a gombra, és véletlenszerűen megjelenik néhány kártya érdekes információkkal.
-                Ez a rész már JavaScript segítségével működik, és példát mutat egy egyszerű,
-                dinamikus kliens oldali megoldásra.
-            </p>
-
-            <!-- Gomb, ami indítja a JS logikát -->
-            <div class="mb-3">
-                <button id="show-facts-btn" class="btn btn-primary">
-                    Érdekességek mutatása
-                </button>
-            </div>
-
-            <!-- Ide fognak bekerülni a kártyák JavaScript segítségével -->
-            <div id="facts-container" class="row g-3"></div>
-
-            <!--
-                Extra CSS – csak ehhez a modulhoz.
-                Szebb kártyákat, árnyékot, animációt adunk hozzá.
-            -->
-            <style>
-                /* A JS által generált kártyák alap stílusa */
-                #facts-container .fact-card {
-                    background: #ffffff;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-                    padding: 1rem 1.25rem;
-                    border-left: 5px solid #0d6efd; /* kék sáv a bal oldalon */
-                    position: relative;
-                    overflow: hidden;
-                    opacity: 0;                  /* induláskor láthatatlan */
-                    transform: translateY(10px); /* kicsit lejjebb csúsztatva */
-                    transition: all 0.3s ease;   /* animáció átmenet */
-                    height: 100%;
-                }
-
-                /* Amikor a JS hozzáadja a "visible" osztályt, a kártya beúszik */
-                #facts-container .fact-card.visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                #facts-container .fact-card h3 {
-                    font-size: 1.1rem;
-                    margin-bottom: 0.5rem;
-                    font-weight: 600;
-                }
-
-                #facts-container .fact-card p {
-                    margin-bottom: 0;
-                    font-size: 0.95rem;
-                }
-
-                /* Halvány ikon a kártya jobb felső sarkában */
-                #facts-container .fact-icon {
-                    position: absolute;
-                    right: -10px;
-                    top: -10px;
-                    font-size: 3.5rem;
-                    color: rgba(13, 110, 253, 0.12);
-                    pointer-events: none;
-                }
-
-                /* Hover effekt – kicsit megemeljük a kártyát */
-                #facts-container .fact-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-                }
-
-                /* Gomb kinézete – egy kicsit szélesebb, „fontosabb” */
-                #show-facts-btn {
-                    min-width: 220px;
-                    font-weight: 500;
-                }
-            </style>
-
-            <!--
-                JavaScript kód
-                - Egy tömbben tároljuk az érdekességeket (cím, szöveg, ikon).
-                - Gombnyomásra 3 véletlenszerű elemet választunk ki.
-                - Ezekből dinamikusan Bootstrap-es kártyákat hozunk létre.
-            -->
-            <script>
-            // ============== Adatmodell: érdekességek listája ==============
-            // mindegyik objektum egy kártyának felel meg (cím + szöveg + emoji ikon)
-            const balatoniErdekessegek = [
-                {
-                    cim: "Az első menetrend szerinti járat",
-                    szoveg: "Az első menetrend szerinti hajójárat 1846-ban indult a Balatonon Széchenyi István kezdeményezésére.",
-                    ikon: "🚢"
-                },
-                {
-                    cim: "Komp Szántód és Tihany között",
-                    szoveg: "A balatoni kompjárat a tó legszűkebb részén, Szántód és Tihany között szállít autókat és utasokat egész évben.",
-                    ikon: "⛴️"
-                },
-                {
-                    cim: "Éjszakai sétahajózás",
-                    szoveg: "Nyári főszezonban több városból indulnak zenés, éjszakai sétahajók a part menti fényekkel és élőzenével.",
-                    ikon: "🎵"
-                },
-                {
-                    cim: "A Balaton mélysége",
-                    szoveg: "A Balaton átlagos mélysége körülbelül 3 méter, a legmélyebb pontja (a Tihanyi-kútnál) 11-12 méter.",
-                    ikon: "🌊"
-                },
-                {
-                    cim: "Jég és hajózás",
-                    szoveg: "Ha a Balaton teljesen befagy, a hajóforgalom szünetel, és külön jégfigyelő szolgálat működik a tó biztonsága érdekében.",
-                    ikon: "❄️"
-                },
-                {
-                    cim: "Balatoni kikötők",
-                    szoveg: "A tó körül több tucat kikötő található, a nagyobb városokban menetrendi járatok, máshol főként vitorláskikötők működnek.",
-                    ikon: "⚓"
-                }
-            ];
-
-            // ============== Segédfüggvény: véletlenszerű elemválasztás ==============
-            /**
-             * Visszaad db darab véletlenszerű elemet a megadott listából
-             * úgy, hogy ugyanaz az elem ne ismétlődjön.
-             */
-            function veletlenElemek(lista, db) {
-                const masolat = [...lista]; // másolatot készítünk, hogy az eredetit ne módosítsuk
-                const eredmeny = [];
-
-                while (eredmeny.length < db && masolat.length > 0) {
-                    const index = Math.floor(Math.random() * masolat.length);
-                    // kivágjuk a véletlenül választott elemet a másolatból
-                    const [elem] = masolat.splice(index, 1);
-                    eredmeny.push(elem);
-                }
-
-                return eredmeny;
-            }
-
-            // ============== Fő logika: DOM esemény és gombkezelés ==============
-            document.addEventListener('DOMContentLoaded', function () {
-                const gomb = document.getElementById('show-facts-btn');
-                const kontener = document.getElementById('facts-container');
-
-                // Biztonsági ellenőrzés: ha valamiért nincs meg az elem, ne fusson hibára a kód
-                if (!gomb || !kontener) return;
-
-                let lathato = false; // állapot: már vannak-e érdekesség-kártyák a lapon
-
-                gomb.addEventListener('click', function () {
-                    // Minden kattintás előtt kiürítjük a konténert
-                    kontener.innerHTML = "";
-
-                    // Véletlenszerűen kiválasztunk 3 érdekességet
-                    const valasztottak = veletlenElemek(balatoniErdekessegek, 3);
-
-                    valasztottak.forEach(function (elem, index) {
-                        // Külső oszlop div (Bootstrap grid)
-                        const col = document.createElement('div');
-                        col.className = "col-md-4";
-
-                        // Maga a kártya
-                        const kartya = document.createElement('div');
-                        kartya.className = "fact-card";
-
-                        // Halvány ikon a sarokban
-                        const ikonSpan = document.createElement('span');
-                        ikonSpan.className = "fact-icon";
-                        ikonSpan.textContent = elem.ikon;
-
-                        // Cím
-                        const cimElem = document.createElement('h3');
-                        cimElem.textContent = elem.cim;
-
-                        // Szöveg
-                        const szovegElem = document.createElement('p');
-                        szovegElem.textContent = elem.szoveg;
-
-                        // Kártya összeállítása
-                        kartya.appendChild(ikonSpan);
-                        kartya.appendChild(cimElem);
-                        kartya.appendChild(szovegElem);
-
-                        // Oszlopba tesszük a kártyát, majd a sor konténerbe
-                        col.appendChild(kartya);
-                        kontener.appendChild(col);
-
-                        // Kis késleltetéssel adjuk hozzá a "visible" osztályt,
-                        // ettől lesz lépcsőzetes beúszó animáció
-                        setTimeout(function () {
-                            kartya.classList.add('visible');
-                        }, 80 * index);
-                    });
-
-                    // A gomb szövegét frissítjük
-                    if (!lathato) {
-                        gomb.textContent = "Érdekességek frissítése";
-                        lathato = true;
-                    } else {
-                        // Ha már látható volt, akkor is új véletlen hármast mutatunk,
-                        // ezért a szöveg marad, csak az állapot változik.
-                        lathato = true;
-                    }
-                });
-            });
-            </script>
-
-        </div>
+    <div class="nav-cards-wrapper">
+      <div class="nav-cards">
+        <a class="nav-card" href="#bemutatkozas">
+          <span class="nav-card-title">Bemutatkozás</span>
+          <span class="nav-card-desc">Kik vagyunk, miről szól az oldal</span>
+        </a>
+        <a class="nav-card" href="#erdekessegek">
+          <span class="nav-card-title">Érdekességek</span>
+          <span class="nav-card-desc">Random fun factek a Balatonról</span>
+        </a>
+        <a class="nav-card" href="#tortenet">
+          <span class="nav-card-title">Hol vagyunk?</span>
+          <span class="nav-card-desc">Térkép és elhelyezkedés</span>
+        </a>
+      </div>
     </div>
+  </header>
+
+
+  <section id="bemutatkozas" class="text-center mb-5 px-3">
+    <h2 class="mb-3 text-center">Üdvözlünk a balatoni hajózás világában!</h2>
+    <p class="lead text-center">
+      A Balaton Magyarország legnagyobb tava, évszázadok óta a vízi élet és kikapcsolódás központja.
+      Számos kikötő és hajóút várja a látogatókat, legyen szó sétahajózásról, kompokról vagy túrákról.
+      Most bemutatjuk a vízi világ fénypontjait, érdekességeit és vadonatúj menüpontjainkat.
+    </p>
+  </section>
+
+ 
+  <section id="erdekessegek" class="mb-5">
+    <div class="gomb">
+      <button class="nav-card-button" id="show-facts-btn">
+        Mutasd az érdekességeket
+      </button>
+    </div>
+    <div class="row justify-content-center" id="facts-container"></div>
+  </section>
+
+ 
+  <section id="tortenet" class="mb-5 text-center">
+    <h2 class="mb-3 text-center">Hol vagyunk?</h2>
+    <div class="map-wrapper mx-auto" style="max-width:100%; max-height:400px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.104896364676!2d18.040389276025447!3d46.90993427113449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4769bf7d5b62549f%3A0x9a7c64878d3ee3c1!2zU2nDs2ZvayBLaWvDtnTFkQ!5e1!3m2!1shu!2shu!4v1775924516822!5m2!1shu!2shu"
+              width="100%" height="450" style="border:0;" allowfullscreen></iframe>
+    </div>
+  </section>
 </div>
+
+<!-- Reszponzív CSS -->
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  background:#f8f9fa;
+  color:#333;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.gomb {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+
+.nav-cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 3D-s nav kártyák (felső 3 box) */
+.nav-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.4rem;
+  min-width: 210px;
+  border-radius: 14px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #ffffff, #e8f2ff);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.16);
+  border: 1px solid rgba(13, 110, 253, 0.08);
+  transform: translateY(0) translateZ(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  text-align: center;
+}
+
+.nav-card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #0d4ba0;
+}
+
+.nav-card-desc {
+  font-size: 0.9rem;
+  color: #4b4f5c;
+  margin-top: 0.15rem;
+}
+
+/* hover – „3D-s” kiemelkedés */
+.nav-card:hover {
+  transform: translateY(-6px) translateZ(0) scale(1.02);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.25);
+  border-color: rgba(255, 196, 0, 0.9);
+}
+
+/* Gomb, ami úgy néz ki, mint a 3D-s nav kártyák */
+.nav-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  border-radius: 14px;
+  border: 1px solid rgba(13, 110, 253, 0.08);
+  background: linear-gradient(135deg, #ffffff, #e8f2ff);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.16);
+  color: #0d4ba0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transform: translateY(0) translateZ(0);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    
+    color 0.25s ease;
+}
+
+.nav-card-button:hover {
+  transform: translateY(-6px) translateZ(0) scale(1.02);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.25);
+  border-color: rgba(255, 196, 0, 0.9);
+  background: linear-gradient(135deg, #ffffff, #fdf3d4);
+  color: #0b3b7a;
+}
+
+.nav-card-button:focus {
+  outline: none;
+}
+
+/* kisebb kijelzőre */
+@media (max-width: 768px) {
+  .nav-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-card {
+    min-width: 100%;
+  }
+}
+
+#facts-container {
+  max-width:800px;
+  margin:0 auto;
+}
+
+/* Érdekességek kártyák alapstílusa + animációk */
+#facts-container .fact-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  opacity: 0;                 /* induláskor láthatatlan */
+  transform: scale(0.9);      /* kicsit kisebb méret */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+#facts-container .fact-card.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover effekt: nagyobb és árnyékosabb */
+#facts-container .fact-card:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.fact-icon {
+  font-size:2.5rem;
+  position:absolute;
+  right:20px;
+  top:20px;
+  color:rgba(0,123,255,0.1);
+}
+</style>
+
+<!-- JS: érdekességek -->
+<script>
+// ============== Adatmodell: érdekességek listája ==============
+const erdekessegek = [
+  {
+    cim: "Első hajójárat 1846-ból",
+    rovid: "Az első menetrend szerinti hajójárat 1846-ban indult Széchenyi István kezdeményezésére.",
+    hosszabb: "1846-ban indult el a Balaton első menetrend szerinti gőzhajója, a Kisfaludy. "
+            + "Ezzel vette kezdetét a szervezett balatoni hajózás, ami nagy lendületet adott "
+            + "a tó környéki turizmus és kereskedelem fejlődésének.",
+    ikon: "🚢"
+  },
+  {
+    cim: "Komp Szántód–Tihany között",
+    rovid: "A komp egész évben közlekedik, és autókat is szállít.",
+    hosszabb: "A Szántód és Tihany között közlekedő komp az egyik legfontosabb átkelő a Balatonon. "
+            + "A járműveket is szállító járat jelentősen lerövidíti az utazási időt a tó két partja között, "
+            + "és egész évben üzemel, ha az időjárási viszonyok engedik.",
+    ikon: "⛴️"
+  },
+  {
+    cim: "Éjszakai sétahajók",
+    rovid: "Esténként zenés sétahajók indulnak több kikötőből.",
+    hosszabb: "A nyári szezonban több balatoni kikötőből indulnak esti, zenés sétahajók. "
+            + "A fedélzeten élőzene vagy DJ gondoskodik a hangulatról, miközben a kivilágított part "
+            + "és a csillagos ég különleges élményt ad az utasoknak.",
+    ikon: "🎵"
+  },
+  {
+    cim: "A Balaton mélysége",
+    rovid: "A tó átlagos mélysége 3 méter, legmélyebb pontja 11 méter.",
+    hosszabb: "A Balaton viszonylag sekély tó: átlagos mélysége körülbelül 3 méter. "
+            + "Legmélyebb pontja a Tihanyi-kút, ami nagyjából 11–12 méter mély. "
+            + "A sekélység miatt nyáron viszonylag gyorsan felmelegszik a víz.",
+    ikon: "🌊"
+  },
+  {
+    cim: "Téli jég és hajózás",
+    rovid: "Fagyáskor jégfigyelő szolgálat működik, hajójáratok nem közlekednek.",
+    hosszabb: "Amikor tartósan fagypont alá csökken a hőmérséklet, a Balaton felszíne befagy. "
+            + "Ilyenkor jégfigyelő szolgálat ellenőrzi a viszonyokat, de a menetrendi hajók nem közlekedhetnek. "
+            + "Bizonyos években a korcsolyázás és jégen való túrázás is népszerű program, mindig fokozott óvatossággal.",
+    ikon: "❄️"
+  },
+  {
+    cim: "Kikötők a tó körül",
+    rovid: "Több tucat kikötő és vitorláskikötő található a Balaton partján.",
+    hosszabb: "A Balaton partján több tucat kisebb-nagyobb kikötő található, amelyek közül sok "
+            + "kifejezetten vitorlások fogadására specializálódott. A kikötők fontos szerepet játszanak "
+            + "a vízi turizmusban, versenyvitorlázásban és a helyi gazdaságban.",
+    ikon: "⚓"
+  }
+];
+
+// ============== Megjelenítés – AZ ÖSSZES ÉRDEKESSÉG ==============
+document.addEventListener('DOMContentLoaded', () => {
+  const gomb = document.getElementById('show-facts-btn');
+  const kont = document.getElementById('facts-container');
+
+  gomb.onclick = () => {
+    kont.innerHTML = "";
+
+    erdekessegek.forEach((m, i) => {
+      const col = document.createElement('div');
+      col.className = 'col-md-4 mb-3';
+
+      const card = document.createElement('div');
+      card.className = 'fact-card position-relative';
+
+      const icon = document.createElement('div');
+      icon.className = 'fact-icon';
+      icon.textContent = m.ikon;
+
+      const cim = document.createElement('h3');
+
+      const rovid = document.createElement('p');
+      rovid.textContent = m.rovid;
+
+      const hosszabb = document.createElement('p');
+      hosszabb.textContent = m.hosszabb;
+
+      card.appendChild(icon);
+      card.appendChild(cim);
+      card.appendChild(rovid);
+      card.appendChild(hosszabb);
+
+      col.appendChild(card);
+      kont.appendChild(col);
+
+      setTimeout(() => { card.classList.add('visible'); }, 80 * i);
+      setTimeout(() => {
+  card.classList.add('visible');
+}, 80 * i);
+    });
+  };
+});
+</script>
+
+
 
 

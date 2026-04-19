@@ -67,6 +67,7 @@ th {
     width: 700px;
     padding: 40px 40px 50px;
     border-radius: 10px;
+    margin: 20px auto;
 }
 
 .form-wrapper h1 {
@@ -106,3 +107,53 @@ input {
     padding: 6px 50px;
     text-decoration: none;
 }
+/* CRUD táblázat görgethető mobilon */
+.container {
+  padding: 0 0.75rem 1.5rem;
+  margin: 0 auto;
+}
+
+.container table {
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  th, td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .gomb-eltavolitas,
+  .container a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  .container h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Ha több oszlop lenne, körbegörgethetővé tehető */
+.container {
+  overflow-x: auto;
+}
+.form-wrapper {
+  background: #fff;
+  width: min(700px, 95%);
+  margin: 20px auto;
+}
+
+/* Mobilon a gombok egymás alatt */
+@media (max-width: 600px) {
+  .gomb-doboz {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .gomb-doboz button,
+  .gomb-doboz a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
