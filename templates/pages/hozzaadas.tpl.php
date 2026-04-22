@@ -10,8 +10,14 @@
             <form method="POST" action="muvelet">
                 <input type="hidden" name="action" value="hozzaadas">
 
-                <input type="text" name="nev" placeholder="Név" required>
-                <input type="text" name="varos" placeholder="Város" required>
+                <div class="input-container">
+                    <input type="text" id="nev" name="nev" required>
+                    <label for="nev">Név</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="varos" name="varos" required>
+                    <label for="varos">Város</label>
+                </div>
 
                 <div class="gomb-doboz">
                     <button type="submit" class="gomb">Hozzáadás</button>
@@ -20,5 +26,21 @@
             </form>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('.input-container input').forEach(input => {
+            const label = input.nextElementSibling;
+            function checkValue() {
+                if (input.value.trim() !== '' || input === document.activeElement) {
+                    label.classList.add('floating');
+                } else {
+                    label.classList.remove('floating');
+                }
+            }
+            input.addEventListener('focus', checkValue);
+            input.addEventListener('blur', checkValue);
+            input.addEventListener('input', checkValue);
+            checkValue(); // Initial check
+        });
+    </script>
 </body>
 </html>

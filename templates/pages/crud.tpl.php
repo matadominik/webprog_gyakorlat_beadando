@@ -37,7 +37,7 @@
                                 <form method="POST" action="muvelet" class="inline-form">
                                     <input type="hidden" name="action" value="torles">
                                     <input type="hidden" name="az" value="<?= htmlspecialchars($tulajdonos['az']) ?>">
-                                    <button type="submit" class="gomb-eltavolitas">Eltávolítás</button>
+                                    <button type="submit" class="gomb-eltavolitas" onclick="return confirm('Biztosan törölni szeretné ezt a tulajdonost?')">Eltávolítás</button>
                                 </form>
                             </td>
                         <?php endif; ?>
