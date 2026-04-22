@@ -101,7 +101,7 @@ input {
 
 .input-container label {
     position: absolute;
-    top: 12px;
+    top: 20px;
     left: 12px;
     color: #999;
     transition: all 0.2s ease;
