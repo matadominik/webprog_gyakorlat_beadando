@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= $ablakcim['cim'] . ( (isset($ablakcim['mottó'])) ? ('|' . $ablakcim['mottó']) : '' ) ?></title>
 <link rel="stylesheet" href="./styles/stilus.css" type="text/css">
+<link rel="stylesheet" href="/webprog_gyakorlat_beadando/styles/kapcsolat.css">
+<link rel="stylesheet" href="/webprog_gyakorlat_beadando/styles/uzenetek.css">
 </head>
 <body>
 <header>
