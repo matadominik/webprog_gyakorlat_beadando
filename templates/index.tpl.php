@@ -20,8 +20,9 @@ if (file_exists('./logicals/' . $keres['fajl'] . '.php')) {
     <link rel="stylesheet" href="./styles/stilus.css" type="text/css">
 
     <!-- Oldalspecifikus stílusok -->
-    <link rel="stylesheet" href="/webprog_gyakorlat_beadando/styles/kapcsolat.css">
-    <link rel="stylesheet" href="/webprog_gyakorlat_beadando/styles/uzenetek.css">
+ <link rel="stylesheet" href="./styles/kapcsolat.css">
+<link rel="stylesheet" href="./styles/uzenetek.css">
+
 </head>
 
 <body>
