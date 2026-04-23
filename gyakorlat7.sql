@@ -38,3 +38,4 @@ uzenet TEXT NOT NULL,
 kuldes_ideje TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 
+

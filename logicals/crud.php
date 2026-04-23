@@ -19,3 +19,5 @@ catch (PDOException $e) {
     $crud_hiba = "Hiba: " . $e->getMessage();
 }
 ?>
+
+

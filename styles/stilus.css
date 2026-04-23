@@ -21,6 +21,7 @@ body {
     background-repeat: no-repeat;
 }
 
+/* --- HEADER --- */
 header {
     border-radius: 10px;
     border: 0.4vw solid white !important;
@@ -30,18 +31,24 @@ header {
     padding: 10px;
     margin: 10px;
     color: rgb(40, 40, 88);
+    overflow: hidden;
 }
 
 header img {
     float: left;
     margin: 20px 10px 0px 10px;
+    max-width: 180px;
+    height: auto;
 }
 
+/* --- WRAPPER --- */
 div#wrapper {
     margin: 10px;
     max-width: calc(100% - 20px);
+    padding: 0 0.75rem 1.5rem;
 }
 
+/* --- NAVIGATION --- */
 #nav {
     margin: 10px;
     border-radius: 10px;
@@ -83,18 +90,7 @@ div#wrapper {
     transform: translateY(-1px);
 }
 
-@media (max-width: 720px) {
-    #nav ul {
-        justify-content: center;
-        gap: 0.25rem;
-    }
-
-    #nav a {
-        padding: 0.65rem 0.9rem;
-        font-size: 0.95rem;
-    }
-}
-
+/* --- CONTENT --- */
 div#content {
     display: block;
     width: auto;
@@ -108,15 +104,17 @@ div#content {
     font-size: 1.2em;
 }
 
-div#content img{
+div#content img {
     float: right;
-    width: 20em;
+    width: 100%;
+    max-width: 300px;
     height: auto;
     margin: 0 0 15px 15px;
     padding: 3px;
     border: 3px solid blue;
 }
 
+/* --- FOOTER --- */
 footer {
     border-radius: 10px;
     margin: 10px;
@@ -127,26 +125,55 @@ footer {
         url(../images/hatterkep-csoport.avif);
     text-align: center;
 }
-/* Tartalom konténer, hogy mobilon is legyen kis belső margó */
-div#wrapper {
-  padding: 0 0.75rem 1.5rem;
+
+/* --- GLOBAL RESPONSIVE FIXES --- */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Kisebb kijelzőknél még szellősebb header és content */
+/* --- MOBILE BREAKPOINT (max 720px) --- */
 @media (max-width: 720px) {
+
+  /* Header kép mobilon középre */
   header img {
+    float: none;
+    display: block;
+    margin: 0 auto 10px auto;
     max-width: 120px;
-    height: auto;
   }
 
   header h1 {
-    font-size: 1.4rem;
     text-align: center;
+    font-size: 1.4rem;
   }
 
+  /* Menü gombok kisebbek */
+  #nav ul {
+    gap: 0.25rem;
+  }
+
+  #nav a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Content kép mobilon ne floatoljon */
+  div#content img {
+    float: none;
+    display: block;
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  /* Content padding mobilon */
   div#content {
     padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* Wrapper kisebb belső margóval */
+  div#wrapper {
+    padding: 0 0.5rem 1rem;
   }
 }
-
-
