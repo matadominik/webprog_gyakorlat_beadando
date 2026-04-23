@@ -27,7 +27,3 @@
     <p><a href="kapcsolat">Vissza a kapcsolat űrlaphoz</a></p>
 
 <?php endif; ?>
-
-
-
-
